@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoGital Focus - Reclaim Your Focus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #666;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1a1a1a;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #1a1a1a;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #666;
+      margin-bottom: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 64px;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #2563eb;
+      padding: 16px 32px;
+      border: 2px solid #2563eb;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .hero-mockup {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .phone-mockup {
+      background: #1a1a1a;
+      border-radius: 16px;
+      padding: 16px;
+      position: relative;
+    }
+
+    .phone-screen {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 8px;
+      padding: 24px;
+      color: white;
+      text-align: center;
+    }
+
+    .timer-display {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .timer-label {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-bottom: 24px;
+    }
+
+    .timer-button {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 80px 0;
+      background: #f8fafc;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 64px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 48px;
+      margin-top: 64px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      background: #2563eb;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 24px;
+      color: white;
+    }
+
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+
+    .feature-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      padding: 80px 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 48px;
+      margin-top: 64px;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 32px;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: #2563eb;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 24px;
+    }
+
+    .step-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+
+    .step-card p {
+      color: #666;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 80px 0;
+      background: #f8fafc;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .testimonial-text {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .testimonial-role {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Pricing */
+    .pricing {
+      padding: 80px 0;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .pricing-card {
+      background: white;
+      border: 2px solid #f0f0f0;
+      border-radius: 12px;
+      padding: 48px 32px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .pricing-card.featured {
+      border-color: #2563eb;
+      transform: scale(1.05);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.05) translateY(-4px);
+    }
+
+    .plan-name {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+
+    .plan-price {
+      font-size: 48px;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .plan-period {
+      color: #666;
+      margin-bottom: 32px;
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .plan-features li {
+      padding: 8px 0;
+      color: #666;
+    }
+
+    .plan-features li::before {
+      content: "✓";
+      color: #2563eb;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 80px 0;
+      background: #f8fafc;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-question {
+      padding: 24px;
+      font-weight: 600;
+      color: #1a1a1a;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .faq-answer {
+      padding: 0 24px 24px;
+      color: #666;
+      line-height: 1.6;
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 48px 0 24px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-section h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .footer-section a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+
+    .footer-section a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 24px;
+      text-align: center;
+      color: #ccc;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .features-grid,
+      .steps-grid,
+      .testimonials-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+
+      .pricing-card.featured:hover {
+        transform: translateY(-4px);
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Email Subscription Styles */
+    .email-subscription {
+      margin: 48px auto;
+      max-width: 500px;
+    }
+
+    .subscription-text {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    .email-form {
+      width: 100%;
+    }
+
+    .email-input-group {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .email-input-group input {
+      flex: 1;
+      padding: 16px 20px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.2s;
+      background: white;
+    }
+
+    .email-input-group input:focus {
+      outline: none;
+      border-color: #2563eb;
+    }
+
+    .email-input-group input::placeholder {
+      color: #9ca3af;
+    }
+
+    .email-input-group .btn-primary {
+      padding: 16px 24px;
+      white-space: nowrap;
+    }
+
+    .email-message {
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .email-message.success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .email-message.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+    }
+
+    /* Responsive email form */
+    @media (max-width: 768px) {
+      .email-input-group {
+        flex-direction: column;
+      }
+      
+      .email-input-group .btn-primary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo">NoGital Focus</a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="fade-in-up">Reclaim Your Focus</h1>
+      <p class="fade-in-up">Stay focused and beat digital distractions with a simple, gamified focus tool.</p>
+      <div class="cta-buttons fade-in-up">
+        <a href="#pricing" class="btn-primary">Start Focusing Now</a>
+        <a href="#features" class="btn-secondary">Learn More</a>
+      </div>
+      
+      <!-- Email Subscription Form -->
+      <div class="email-subscription fade-in-up">
+        <p class="subscription-text">Get notified when we launch</p>
+        <form id="email-form" class="email-form">
+          <div class="email-input-group">
+            <input 
+              type="email" 
+              id="email-input" 
+              placeholder="Enter your email address" 
+              required
+            >
+            <button type="submit" id="email-submit" class="btn-primary">Subscribe</button>
+          </div>
+          <div id="email-message" class="email-message" style="display: none;"></div>
+        </form>
+      </div>
+      <div class="hero-mockup fade-in-up">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="timer-display">25:00</div>
+            <div class="timer-label">Focus Session</div>
+            <button class="timer-button">Start</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">Everything you need to focus</h2>
+      <p class="section-subtitle">Simple tools that actually work to help you stay productive and minimize distractions.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⏱️</div>
+          <h3>Pomodoro Timer</h3>
+          <p>Stay focused with proven 25-minute work sessions followed by short breaks. Customize intervals to match your workflow.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚫</div>
+          <h3>Website & App Blocker</h3>
+          <p>Block distracting websites and apps during focus sessions. Set custom schedules and whitelist essential sites.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Focus Analytics</h3>
+          <p>Track your productivity with detailed insights. See your focus patterns and identify your most productive hours.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Gamification</h3>
+          <p>Earn points, unlock achievements, and compete with yourself. Turn focus into a rewarding habit.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Focus Goals</h3>
+          <p>Set daily, weekly, and monthly focus targets. Track your progress and celebrate milestones as you build better habits.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌙</div>
+          <h3>Focus Modes</h3>
+          <p>Switch between deep work, light focus, and break modes. Customize your environment for different types of tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Get started in minutes with our simple three-step process.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Set Your Focus</h3>
+          <p>Choose your work duration and break intervals. Set up website blockers for your most distracting sites.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Start Working</h3>
+          <p>Begin your focus session. The timer will guide you through work and break periods automatically.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Track Progress</h3>
+          <p>Review your daily, weekly, and monthly focus statistics. Celebrate your achievements and improve over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">What users are saying</h2>
+      <p class="section-subtitle">Join thousands of students, freelancers, and professionals who have reclaimed their focus.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"NoGital Focus helped me increase my productivity by 40%. The gamification elements make staying focused actually enjoyable."</p>
+          <div class="testimonial-author">Sarah Chen</div>
+          <div class="testimonial-role">Graduate Student</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"As a remote worker, distractions were killing my productivity. This app has been a game-changer for my daily routine."</p>
+          <div class="testimonial-author">Marcus Rodriguez</div>
+          <div class="testimonial-role">Software Developer</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The analytics helped me understand my focus patterns. I now know my peak hours and schedule important tasks accordingly."</p>
+          <div class="testimonial-author">Emma Thompson</div>
+          <div class="testimonial-role">Freelance Writer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Simple, transparent pricing</h2>
+      <p class="section-subtitle">Start free and upgrade when you're ready to unlock advanced features.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 class="plan-name">Free</h3>
+          <div class="plan-price">$0</div>
+          <div class="plan-period">Forever</div>
+          <ul class="plan-features">
+            <li>Basic Pomodoro timer</li>
+            <li>5 website blockers</li>
+            <li>Basic analytics</li>
+            <li>Mobile app access</li>
+          </ul>
+          <a href="#" class="btn-secondary">Get Started Free</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3 class="plan-name">Pro</h3>
+          <div class="plan-price">$9</div>
+          <div class="plan-period">per month</div>
+          <ul class="plan-features">
+            <li>Unlimited focus sessions</li>
+            <li>Unlimited website blockers</li>
+            <li>Advanced analytics & insights</li>
+            <li>Custom focus schedules</li>
+            <li>Priority support</li>
+            <li>Team collaboration features</li>
+          </ul>
+          <a href="#" class="btn-primary">Start Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">How does the website blocker work?</div>
+        <div class="faq-answer">Our browser extension blocks distracting websites during your focus sessions. You can whitelist essential sites and set custom schedules for different days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I use NoGital Focus on multiple devices?</div>
+        <div class="faq-answer">Yes! Your account syncs across all your devices. Start a focus session on your computer and continue on your phone seamlessly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What if I need to pause my focus session?</div>
+        <div class="faq-answer">You can pause and resume sessions anytime. We understand that emergencies happen, and your focus data will still be tracked accurately.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is my data private and secure?</div>
+        <div class="faq-answer">Absolutely. We use industry-standard encryption and never share your personal data. Your focus habits are private and secure.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I cancel my subscription anytime?</div>
+        <div class="faq-answer">Yes, you can cancel your Pro subscription at any time. You'll continue to have access until the end of your billing period.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>NoGital Focus</h3>
+          <p>Reclaim your focus in the digital world with simple, effective tools designed for modern productivity.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Product</h3>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <a href="#">Help Center</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Blog</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NoGital Focus. All rights reserved.</p>
+        <p>Developed by <a href="https://mohammadnasser.com/" target="_blank">Mohammad Nasser Haji Hashemabad</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // API Configuration
+    const API_BASE_URL = 'http://localhost:3000/api/email'; // Change this to your backend URL
+    // For Firebase Functions: 'https://your-region-your-project.cloudfunctions.net/emailApi'
+    
+    // Email subscription functionality
+    class EmailSubscription {
+      constructor() {
+        this.form = document.getElementById('email-form');
+        this.emailInput = document.getElementById('email-input');
+        this.submitBtn = document.getElementById('email-submit');
+        this.messageDiv = document.getElementById('email-message');
+        
+        if (this.form) {
+          this.init();
+        }
+      }
+      
+      init() {
+        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        this.emailInput.addEventListener('input', () => this.clearMessage());
+      }
+      
+      async handleSubmit(e) {
+        e.preventDefault();
+        
+        const email = this.emailInput.value.trim();
+        
+        if (!this.validateEmail(email)) {
+          this.showMessage('Please enter a valid email address.', 'error');
+          return;
+        }
+        
+        this.setLoading(true);
+        
+        try {
+          const response = await fetch(`${API_BASE_URL}/subscribe`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: email,
+              source: 'landing_page'
+            })
+          });
+          
+          const data = await response.json();
+          
+          if (data.success) {
+            this.showMessage(data.message, 'success');
+            this.emailInput.value = '';
+          } else {
+            this.showMessage(data.message || 'Something went wrong. Please try again.', 'error');
+          }
+        } catch (error) {
+          console.error('Email subscription error:', error);
+          this.showMessage('Network error. Please check your connection and try again.', 'error');
+        } finally {
+          this.setLoading(false);
+        }
+      }
+      
+      validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+      
+      setLoading(loading) {
+        if (this.submitBtn) {
+          this.submitBtn.disabled = loading;
+          this.submitBtn.textContent = loading ? 'Subscribing...' : 'Subscribe';
+        }
+      }
+      
+      showMessage(message, type) {
+        if (this.messageDiv) {
+          this.messageDiv.textContent = message;
+          this.messageDiv.className = `email-message ${type}`;
+          this.messageDiv.style.display = 'block';
+          
+          // Auto-hide success messages after 5 seconds
+          if (type === 'success') {
+            setTimeout(() => {
+              this.messageDiv.style.display = 'none';
+            }, 5000);
+          }
+        }
+      }
+      
+      clearMessage() {
+        if (this.messageDiv) {
+          this.messageDiv.style.display = 'none';
+        }
+      }
+    }
+    
+    // Simple scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections for animation
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(30px)';
+      section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(section);
+    });
+
+    // Simple FAQ toggle functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isOpen = answer.style.display === 'block';
+        
+        // Close all other answers
+        document.querySelectorAll('.faq-answer').forEach(ans => {
+          ans.style.display = 'none';
+        });
+        
+        // Toggle current answer
+        answer.style.display = isOpen ? 'none' : 'block';
+      });
+    });
+
+    // Add visual indicator for FAQ questions
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.style.position = 'relative';
+      question.innerHTML += '<span style="position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 18px; transition: transform 0.2s;">+</span>';
+      
+      question.addEventListener('click', () => {
+        const icon = question.querySelector('span');
+        const answer = question.nextElementSibling;
+        const isOpen = answer.style.display === 'block';
+        
+        // Toggle icon
+        icon.textContent = isOpen ? '+' : '−';
+        icon.style.transform = isOpen ? 'translateY(-50%)' : 'translateY(-50%) rotate(90deg)';
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Initialize email subscription when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      new EmailSubscription();
+    });
+  </script>
+</body>
+</html>

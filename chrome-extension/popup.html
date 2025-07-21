@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoGital Focus Blocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>NoGital Focus</h1>
+      <div class="status-indicator" id="statusIndicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Active</span>
+      </div>
+    </div>
+
+    <!-- Mode Selector -->
+    <div class="mode-section">
+      <h3>Current Mode</h3>
+      <div class="mode-buttons">
+        <button class="mode-btn active" id="workModeBtn" data-mode="work">
+          <span class="mode-icon">💼</span>
+          Work Mode
+        </button>
+        <button class="mode-btn" id="breakModeBtn" data-mode="break">
+          <span class="mode-icon">☕</span>
+          Break Mode
+        </button>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings-section">
+      <h3>Settings</h3>
+      
+      <div class="setting-item">
+        <label class="setting-label">
+          <input type="checkbox" id="enableBlocker" checked>
+          <span class="checkmark"></span>
+          Enable Blocker
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <label class="setting-label">
+          <input type="checkbox" id="workModeEnabled" checked>
+          <span class="checkmark"></span>
+          Block during Work Mode
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <label class="setting-label">
+          <input type="checkbox" id="breakModeEnabled">
+          <span class="checkmark"></span>
+          Block during Break Mode
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <label class="setting-label">
+          <input type="checkbox" id="syncWithApp" checked>
+          <span class="checkmark"></span>
+          Sync with Mobile App
+        </label>
+      </div>
+    </div>
+
+    <!-- Blocked Sites -->
+    <div class="sites-section">
+      <div class="sites-header">
+        <h3>Blocked Sites</h3>
+        <button class="add-btn" id="addSiteBtn">+ Add Site</button>
+      </div>
+      
+      <div class="sites-list" id="sitesList">
+        <!-- Sites will be populated here -->
+      </div>
+    </div>
+
+    <!-- Add Site Modal -->
+    <div class="modal" id="addSiteModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Add Blocked Site</h3>
+          <button class="close-btn" id="closeModalBtn">&times;</button>
+        </div>
+        
+        <div class="modal-body">
+          <div class="input-group">
+            <label for="siteUrl">Website URL</label>
+            <input type="text" id="siteUrl" placeholder="example.com">
+            <small>Enter domain name (e.g., facebook.com)</small>
+          </div>
+          
+          <div class="modal-actions">
+            <button class="btn btn-secondary" id="cancelAddBtn">Cancel</button>
+            <button class="btn btn-primary" id="confirmAddBtn">Add Site</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-section">
+      <div class="stat-item">
+        <span class="stat-label">Sites Blocked</span>
+        <span class="stat-value" id="blockedCount">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Today's Blocks</span>
+        <span class="stat-value" id="todayBlocks">0</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <button class="btn btn-secondary" id="syncBtn">Sync Now</button>
+      <button class="btn btn-link" id="settingsBtn">Advanced Settings</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 

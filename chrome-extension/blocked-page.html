@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Blocked - NoGital Focus</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .blocked-site {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 20px 0;
+      color: #991b1b;
+      font-weight: 500;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: #f3f4f6;
+      color: #374151;
+      border: 1px solid #d1d5db;
+    }
+
+    .btn-secondary:hover {
+      background: #e5e7eb;
+    }
+
+    .stats {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f8fafc;
+      border-radius: 12px;
+    }
+
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .stat-label {
+      color: #6b7280;
+    }
+
+    .stat-value {
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .motivation {
+      margin-top: 20px;
+      font-style: italic;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">🚫</div>
+    
+    <h1>Site Blocked</h1>
+    <p class="subtitle">
+      This website is blocked during your focus session. 
+      Stay focused and maintain your productivity!
+    </p>
+
+    <div class="blocked-site" id="blockedSite">
+      <!-- Blocked site will be populated here -->
+    </div>
+
+    <div class="buttons">
+      <button class="btn btn-primary" id="continueBtn">
+        Continue Working
+      </button>
+      <button class="btn btn-secondary" id="settingsBtn">
+        Blocker Settings
+      </button>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-label">Focus Time Today</span>
+        <span class="stat-value" id="focusTime">0h 0m</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Sites Blocked Today</span>
+        <span class="stat-value" id="blockedToday">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Current Streak</span>
+        <span class="stat-value" id="streak">0 days</span>
+      </div>
+    </div>
+
+    <div class="motivation" id="motivation">
+      <!-- Motivational message will be populated here -->
+    </div>
+  </div>
+
+  <script>
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const originalUrl = urlParams.get('original');
+    
+    // Motivational messages
+    const motivations = [
+      "Every distraction avoided is a step toward your goals.",
+      "Focus is a superpower. You're building it right now.",
+      "Your future self will thank you for staying focused.",
+      "Distractions are temporary. Success is permanent.",
+      "You're stronger than any distraction.",
+      "Focus on what matters most.",
+      "Productivity is a choice. You're choosing wisely.",
+      "Every focused moment counts toward your success."
+    ];
+
+    // Update page content
+    function updatePage() {
+      // Set blocked site
+      if (originalUrl) {
+        try {
+          const url = new URL(originalUrl);
+          document.getElementById('blockedSite').textContent = url.hostname;
+        } catch (error) {
+          document.getElementById('blockedSite').textContent = originalUrl;
+        }
+      }
+
+      // Set random motivation
+      const randomMotivation = motivations[Math.floor(Math.random() * motivations.length)];
+      document.getElementById('motivation').textContent = randomMotivation;
+
+      // Load stats from storage
+      loadStats();
+    }
+
+    // Load stats from Chrome storage
+    async function loadStats() {
+      try {
+        const result = await chrome.storage.sync.get([
+          'focusTimeToday',
+          'blockedToday',
+          'currentStreak'
+        ]);
+
+        document.getElementById('focusTime').textContent = 
+          formatTime(result.focusTimeToday || 0);
+        document.getElementById('blockedToday').textContent = 
+          result.blockedToday || 0;
+        document.getElementById('streak').textContent = 
+          `${result.currentStreak || 0} days`;
+      } catch (error) {
+        console.error('Failed to load stats:', error);
+      }
+    }
+
+    // Format time in hours and minutes
+    function formatTime(minutes) {
+      const hours = Math.floor(minutes / 60);
+      const mins = minutes % 60;
+      return `${hours}h ${mins}m`;
+    }
+
+    // Event listeners
+    document.getElementById('continueBtn').addEventListener('click', () => {
+      // Redirect to a productive site
+      window.location.href = 'https://www.google.com';
+    });
+
+    document.getElementById('settingsBtn').addEventListener('click', () => {
+      // Open extension popup
+      chrome.runtime.sendMessage({ action: 'openPopup' });
+    });
+
+    // Initialize page
+    updatePage();
+  </script>
+</body>
+</html> 

@@ -1,0 +1,86 @@
+{
+  "name": "nogital-focus",
+  "version": "1.0.0",
+  "description": "AI-powered productivity application for intelligent task management and focus tracking",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md}",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "productivity",
+    "focus",
+    "pomodoro",
+    "task-management",
+    "ai",
+    "react",
+    "typescript"
+  ],
+  "author": "Mohammad Nasser Haji Hashemabad",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nasserhaji/nogital-focus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nasserhaji/nogital-focus/issues"
+  },
+  "homepage": "https://nogital.com",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.0",
+    "framer-motion": "^10.16.0",
+    "lucide-react": "^0.292.0",
+    "date-fns": "^2.30.0",
+    "zustand": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.{css,md}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+} 
