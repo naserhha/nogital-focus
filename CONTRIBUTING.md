@@ -167,7 +167,6 @@ Screenshots, mockups, etc.
 
 ## 📞 Getting Help
 
-- **Discord**: [Join our community](https://discord.gg/nogitalfocus)
 - **Email**: contributors@nogitalfocus.com
 - **GitHub Issues**: [Create an issue](https://github.com/nasserhaji/nogital-focus/issues)
 
