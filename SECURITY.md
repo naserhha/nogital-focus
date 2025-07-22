@@ -15,7 +15,7 @@ We take security vulnerabilities seriously. If you discover a security issue, pl
 
 ### **Private Disclosure**
 1. **DO NOT** create a public GitHub issue for security vulnerabilities
-2. Email us at: security@nogital.com
+2. Email us at: info@nogital.com
 3. Include detailed information about the vulnerability
 4. Provide steps to reproduce the issue
 5. Include any relevant code or configuration
