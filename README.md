@@ -34,7 +34,7 @@ A modern, AI-powered productivity application designed to help users achieve the
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/nasserhaji/nogital-focus.git
+   git clone https://github.com/naserhha/nogital-focus.git
    cd nogital-focus
    ```
 
@@ -138,8 +138,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Mohammad Nasser Haji Hashemabad**  
 🌐 [Website](https://mohammadnasser.com/)  
-📧 [LinkedIn](https://linkedin.com/in/nasserhaji)  
-💻 [GitHub](https://github.com/nasserhaji)
+📧 [LinkedIn](https://linkedin.com/in/naserhha)  
+💻 [GitHub](https://github.com/naserhha)
 
 ## 🙏 Acknowledgments
 
@@ -152,7 +152,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Email**: support@nogital.com
 - **Documentation**: [docs.nogital.com](https://docs.nogital.com)
-- **Issues**: [GitHub Issues](https://github.com/nasserhaji/nogital-focus/issues)
+- **Issues**: [GitHub Issues](https://github.com/naserhha/nogital-focus/issues)
 
 ---
 
