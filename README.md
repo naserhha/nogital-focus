@@ -150,7 +150,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Email**: support@nogital.com
+- **Email**: info@mohammadnasser.com
 - **Documentation**: [docs.nogital.com](https://docs.nogital.com)
 - **Issues**: [GitHub Issues](https://github.com/naserhha/nogital-focus/issues)
 
